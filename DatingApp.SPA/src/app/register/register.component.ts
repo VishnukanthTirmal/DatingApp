@@ -19,7 +19,7 @@ register() {
   this.authService.register(this.model).subscribe(x => {
    console.log('Registration successful');
   }, error => {
-    console.log('error occured in register module');
+     console.log('error');
   });
  console.log(this.model);
 }
