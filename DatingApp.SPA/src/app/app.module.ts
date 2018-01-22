@@ -1,3 +1,4 @@
+import { UserService } from './_services/User.service';
 import { AuthGuard } from './_guards/auth.guard';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,11 +11,13 @@ import { AuthService } from './_services/auth.service';
 import { AlertifyService } from './_services/alertify.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
-import { MemberListComponent } from './member-list/member-list.component';
+import { MemberListComponent } from './members/member-list/member-list.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './route';
+import { MemberCardComponent } from './members/member-card/member-card.component';
+
 
 
 
@@ -26,7 +29,8 @@ import { appRoutes } from './route';
     RegisterComponent,
     MemberListComponent,
     ListsComponent,
-    MessagesComponent
+    MessagesComponent,
+    MemberCardComponent
 ],
   imports: [
     BrowserModule,
@@ -38,7 +42,8 @@ import { appRoutes } from './route';
   providers: [
     AuthService,
     AlertifyService,
-    AuthGuard
+    AuthGuard,
+    UserService
 
   ],
   bootstrap: [AppComponent]
