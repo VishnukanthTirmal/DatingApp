@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using Datingapp.API.Data;
 using DatingApp.API.Data;
 using DatingApp.API.Helpers;
@@ -41,6 +42,7 @@ namespace DatingAPI
             services.AddTransient<Seed>();
             services.AddMvc();
             services.AddCors();
+            services.AddAutoMapper();
             services.AddScoped<IAuthRepository,AuthRepository>();
             services.AddScoped<IDatingRepository,DatingRepository>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -53,6 +55,12 @@ namespace DatingAPI
                                 ValidateAudience=false
                         };
                       });
+            services.AddMvc().AddJsonOptions(Options =>
+            {
+                Options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            });  
+
+
        
         }
 
