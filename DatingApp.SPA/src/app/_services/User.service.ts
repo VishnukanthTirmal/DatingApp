@@ -22,6 +22,13 @@ getUsers(): Observable<User[]> {
   .catch(this.handleError);
 }
 
+getUser(id): Observable <User> {
+    return this.authHttp
+    .get(this.baseUrl + 'users/' + id)
+    .map(response => <User>response.json())
+    .catch(this.handleError);
+  }
+
   private handleError(error: any) {
     const applicationError = error.headers.get('Application-Error');
     if (applicationError) {

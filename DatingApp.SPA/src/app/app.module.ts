@@ -1,3 +1,4 @@
+import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { UserService } from './_services/User.service';
 import { AuthGuard } from './_guards/auth.guard';
 import { HttpModule } from '@angular/http';
@@ -31,7 +32,8 @@ import { AuthModule } from './auth/auth.module';
     MemberListComponent,
     ListsComponent,
     MessagesComponent,
-    MemberCardComponent
+    MemberCardComponent,
+    MemberDetailComponent
 ],
   imports: [
     BrowserModule,
