@@ -23,6 +23,8 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './route';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { AuthModule } from './auth/auth.module';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { MemberEditResolvers } from './_resolvers/member-edit.resolver';
 
 
 
@@ -37,7 +39,8 @@ import { AuthModule } from './auth/auth.module';
     ListsComponent,
     MessagesComponent,
     MemberCardComponent,
-    MemberDetailComponent
+    MemberDetailComponent,
+    MemberEditComponent
 ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import { AuthModule } from './auth/auth.module';
     AuthGuard,
     UserService,
     MemberDetialResolvers,
-    MemberListResolvers
+    MemberListResolvers,
+    MemberEditResolvers
 
   ],
   bootstrap: [AppComponent]
