@@ -1,3 +1,5 @@
+import { MemberListResolvers } from './_resolvers/member-list.resolvers';
+import { MemberDetialResolvers } from './_resolvers/member-detail.resolvers';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { UserService } from './_services/User.service';
 import { AuthGuard } from './_guards/auth.guard';
@@ -49,7 +51,9 @@ import { AuthModule } from './auth/auth.module';
     AuthService,
     AlertifyService,
     AuthGuard,
-    UserService
+    UserService,
+    MemberDetialResolvers,
+    MemberListResolvers
 
   ],
   bootstrap: [AppComponent]
