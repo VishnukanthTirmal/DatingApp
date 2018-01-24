@@ -1,3 +1,4 @@
+import { NgxGalleryModule } from 'ngx-gallery';
 import { MemberListResolvers } from './_resolvers/member-list.resolvers';
 import { MemberDetialResolvers } from './_resolvers/member-detail.resolvers';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
@@ -45,7 +46,8 @@ import { AuthModule } from './auth/auth.module';
     BsDropdownModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     AuthModule,
-    TabsModule.forRoot()
+    TabsModule.forRoot(),
+    NgxGalleryModule
   ],
   providers: [
     AuthService,
