@@ -4,7 +4,7 @@
                     <h1>Your Profile</h1>
             </div>
             <div class="col-sm-8">
-                 <div class="alert alert-info">
+                 <div class="alert alert-info" [hidden]="!editForm.dirty">
                  <p><strong>Information: </strong> You have made changes. Any unsaved changes will be lost!</p>
                  </div>
 
@@ -36,17 +36,18 @@
                 <p>{{user.created}}</p>
              </div>
              <div class="panel-footer">
-                    <button class="btn btn-success btn-block">Save Changes</button>
-            
-                     </div>
+              <button [disabled]="!editForm.dirty" form="editForm" 
+              class="btn btn-success btn-block">Save Changes</button>
+             </div>
           </div>
-      
-        </div>
+       </div>
         
             <div class="col-sm-8">
               <div class="tab-panel">
                   <tabset class="member-tabset">
                       <tab heading="Edit Profile">
+                        <form #editForm="ngForm"  (ngSubmit)="updateUser()" 
+                        id="editForm">
                       <h4> Description</h4>      
                       <textarea name="introduction"  rows="6" 
                       [(ngModel)]="user.introduction"
@@ -60,6 +61,8 @@
                       [(ngModel)]="user.interests"
                       class="form-control"></textarea>
                       <h4>Location Details</h4>
+                 
+
                       <div class="form-inline">
                             <label for="city">City: </label>
                             <input class="form-control" type="text" name="city" [(ngModel)]="user.city" >
@@ -67,9 +70,10 @@
                             <label for="country">Country: </label>
                             <input class="form-control" type="text" name="country" [(ngModel)]="user.country" >
                         </div>
+                      </form>
                     </tab>
                       <tab heading="Edit Photos">
-                        <p>Edit photos will go here</p>                     
+                        <p>Edit photos will go here123</p>                     
                       </tab>
                     </tabset>
               </div>
