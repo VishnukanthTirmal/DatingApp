@@ -25,6 +25,7 @@ import { MemberCardComponent } from './members/member-card/member-card.component
 import { AuthModule } from './auth/auth.module';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MemberEditResolvers } from './_resolvers/member-edit.resolver';
+import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes';
 
 
 
@@ -59,7 +60,8 @@ import { MemberEditResolvers } from './_resolvers/member-edit.resolver';
     UserService,
     MemberDetialResolvers,
     MemberListResolvers,
-    MemberEditResolvers
+    MemberEditResolvers,
+    PreventUnsavedChanges
 
   ],
   bootstrap: [AppComponent]
